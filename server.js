@@ -25,7 +25,7 @@ app.use(
     allowedHeaders: ["Content-Type"],
   })
 );
-
+//this code is for sending a WhatsApp message to the donor
 function sendMessage(msg, receiverNumber) {
   const accountSid = config.accountSid;
   const authToken = config.authToken;
