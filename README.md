@@ -1,18 +1,21 @@
-# Open Payments Example Script
+# Payment Processing Server
 
-These two scripts send money between two wallet addresses, using the [Open Payments client](https://github.com/interledger/open-payments/tree/main/packages/open-payments).
+This is a Node.js server for handling one-time and recurring payments using the Interledger Open Payments API. It includes endpoints for starting and finishing payments, as well as sending WhatsApp notifications to Donors via Twilio.
+The code for the server is at server.js.
+We acknowledge the security risk that leaving our Twilio and Wallet keys on this repository. It's only for time purposes for you guys :)
 
-`step-1.js` creates an incoming payment on the receiving wallet address, and a quote on the sending wallet address (after getting grants for both). It also creates an interactive outgoing payment grant, which will require user interaction.
+## Prerequisites
 
-`step-2.js` finalizes the grant (after accepting it, via the URL), and creates the outgoing payment.
+- Node.js installed
+- npm (Node Package Manager) installed
 
-### Steps
-
-1. Make sure you have NodeJS installed
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/payment-server.git
+   cd payment-server
 2. Run `npm install`
-3. Get a private key, client wallet address and keyId from the [test wallet](https://rafiki.money), and add them to `config.js`
-4. Pick a receiving wallet address, and a sending wallet address.
-5. Run `node step-1.js`
-6. Copy `QUOTE_URL` `CONTINUE_URI` `CONTINUE_ACCESS_TOKEN` into `step-2.js` script.
-7. Click on the outputted URL, to accept the outgoing payment grant.
-8. Run `node step-2.js`. This will create the outgoing payment, and move the funds between the sending wallet address, and the receiving one!
+3. If you testing that we didnt hardcode any values :), you could get a private key, client wallet address and keyId from the [test wallet](https://rafiki.money), and add them to `config.js`. If not, you can proceed to step 4.
+4. Run 'node server.js'
+
+
