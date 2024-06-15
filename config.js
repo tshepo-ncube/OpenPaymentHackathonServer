@@ -4,4 +4,6 @@ export default {
   PRIVATE_KEY_PATH: "private.key", // save the key labelled private.key in the root of this project
   RECEIVING_WALLET_ADDRESS_URL: "https://ilp.rafiki.money/uct", // wallet address at which the incoming payment will be made (note: use "https://" instead of $)
   SENDING_WALLET_ADDRESS_URL: "https://ilp.rafiki.money/tshepo", // wallet address at which the quote and the outgoing payment grant will be made (note: use "https://" instead of $)
-};
+  accountSid : "AC4b0aa1a7d9be425727a22bbc76e08ff7",
+  authToken : "e8aba7f1ea43af8c5c5dabbad12f79e9",
+  };
