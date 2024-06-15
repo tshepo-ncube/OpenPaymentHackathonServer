@@ -304,7 +304,7 @@ app.post("/finish_one_time_payment", async (req, res) => {
     }
     return;
   }
-
+  sendMessage(msg, "");
   if (!isFinalizedGrant(finalizedOutgoingPaymentGrant)) {
     throw new Error(
       "Expected finalized grant. Probably the interaction from the previous script was not accepted, or the grant was already used."
@@ -332,7 +332,7 @@ app.post("/finish_one_time_payment", async (req, res) => {
     "\nStep 7: Created outgoing payment. Funds will now move from the outgoing payment to the incoming payment.",
     outgoingPayment
   );
-  sendMessage(msg, "");
+
   // Respond to the client
   res.json({ message: "Payment Complete successfully" });
 });
