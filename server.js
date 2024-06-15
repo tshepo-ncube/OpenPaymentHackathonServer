@@ -279,7 +279,7 @@ app.post("/finish_one_time_payment", async (req, res) => {
   });
 
   const sendingWalletAddress = await client.walletAddress.get({
-    url: config.SENDING_WALLET_ADDRESS_URL,
+    url: sendingWalletAddressUrl,
   });
 
   // Step 6: Check if the interactive grant was accepted.
@@ -517,7 +517,7 @@ app.post("/finish_recurring_payments", async (req, res) => {
   });
 
   const sendingWalletAddress = await client.walletAddress.get({
-    url: config.SENDING_WALLET_ADDRESS_URL,
+    url: sendingWalletAddressUrl,
   });
 
   let finalizedOutgoingPaymentGrant;
