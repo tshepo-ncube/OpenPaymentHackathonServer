@@ -27,14 +27,13 @@ app.use(
 );
 
 function sendMessage(msg, receiverNumber) {
-  
-  const accountSid =  config.accountSid; 
-  const authToken = config.authTokenl";
+  const accountSid = config.accountSid;
+  const authToken = config.authToken;
   const client = twilio(accountSid, authToken);
   client.messages
     .create({
       //body: 'Would you like to receive _Positive Vibes_ 😄✨🌈?',
-      body: msg,
+      body: `*Message from OpenTuition Recipient*: ${msg} \n\n _You can opt out of receiving recipient messages on your OpenTuition Profile_`,
       //body: 'Hi Tshepo',
       from: "whatsapp:+27612074607",
       //to: "whatsapp:+27634429008",
@@ -568,8 +567,6 @@ app.post("/finish_recurring_payments", async (req, res) => {
     }
   );
 
-  const accountSid = "AC4b0aa1a7d9be425727a22bbc76e08ff7";
-  const authToken = "2c0b1213bbaf6a6b7dff3fbee9c261c6";
   sendMessage(msg, "");
 });
 
