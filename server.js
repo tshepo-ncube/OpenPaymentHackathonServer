@@ -27,8 +27,9 @@ app.use(
 );
 
 function sendMessage(msg, receiverNumber) {
-  const accountSid = "AC4b0aa1a7d9be425727a22bbc76e08ff7";
-  const authToken = "2c0b1213bbaf6a6b7dff3fbee9c261c6";
+  
+  const accountSid =  config.accountSid; 
+  const authToken = config.authTokenl";
   const client = twilio(accountSid, authToken);
   client.messages
     .create({
