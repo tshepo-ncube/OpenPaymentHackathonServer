@@ -6,7 +6,7 @@ We acknowledge the security risk that leaving our Twilio and Wallet keys on this
 
 ## Prerequisites
 
-- Node.js installed
+- Node.js installed (v20.12.2)
 - npm (Node Package Manager) installed
 
 ## Installation
